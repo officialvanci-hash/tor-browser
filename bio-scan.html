@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bio Scan</title>
+<style>
+body{
+ background:black;
+ color:#0f0;
+ font-family:monospace;
+ text-align:center;
+}
+#laser{
+ height:3px;
+ width:100%;
+ background:red;
+ position:absolute;
+ top:0;
+ animation:scan 3s infinite;
+}
+@keyframes scan{
+ 0%{top:0}
+ 100%{top:95%}
+}
+</style>
+</head>
+<body>
+
+<div id="laser"></div>
+<h1>Accessing Camera...</h1>
+<h3>Performing Bio-Metric Scan...</h3>
+
+<script>
+setTimeout(()=>{
+ document.body.innerHTML += "<h2>IDENTITY MATCH FOUND ✔</h2>";
+},4500);
+</script>
+
+</body>
+</html>
