@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>VANCI TOR WEB ACCESS</title>
+
 <style>
 body{
     background:black; 
     color:#00ff55;
     font-family:monospace;
     text-align:center;
-    padding-top:80px;
+    padding-top:60px;
 }
 
 /* LINKS */
 a{
     display:block;
-    font-size:24px;
+    font-size:22px;
     color:#00ff55;
     margin:18px;
     text-decoration:none;
@@ -36,14 +37,44 @@ a:hover{
     100%{text-shadow:0 0 10px #00ff55;}
 }
 
-/* IMAGE STYLING */
+/* MAIN IMAGE */
 #idImage{
-    width:320px;
-    height:auto;
+    width:300px;
     border:2px solid #00ff55;
     margin-top:25px;
     border-radius:6px;
     box-shadow:0 0 15px #00ff55;
+}
+
+/* CARDS */
+.card{
+    border:2px solid #00ff55;
+    width:330px;
+    margin:30px auto;
+    padding:15px;
+    box-shadow:0 0 15px #00ff55;
+}
+
+/* INPUTS */
+input{
+    background:black;
+    border:1px solid #00ff55;
+    color:#00ff55;
+    padding:6px;
+    margin:5px;
+    font-family:monospace;
+    width:85%;
+}
+button{
+    background:black;
+    color:#00ff55;
+    border:1px solid #00ff55;
+    padding:6px 20px;
+    cursor:pointer;
+    margin-top:10px;
+}
+button:hover{
+    box-shadow:0 0 10px #00ff55;
 }
 </style>
 </head>
@@ -52,17 +83,76 @@ a:hover{
 
 <div class="glitch">VANCI DARK SYSTEM</div>
 
-<!-- ADDED HACKER ID / IP IMAGE -->
+<!-- MAIN IMAGE -->
 <img id="idImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvsm5CPv0EBCN1br7X8dyNx8Cczs12wCfmmw&s">
 
-<br><br>
+<!-- FAKE TARGET SCANNER -->
+<div class="card">
+    <h3>▶ TARGET ACCOUNT SCANNER (SIMULATION)</h3>
 
-<!-- NAVIGATION PAGES -->
-<a href="red-alert.html">▶ RED ALERT FOR RELOAD TO SAFE FROM CYBER JUST CLICK IT AND NOW YOUR DATA IS SAFE </a>
+    <input id="userName" placeholder="Enter Username"><br>
+    <input id="userPhone" placeholder="Enter Mobile Number"><br>
+
+    <button onclick="showFakeData()">SCAN PROFILE</button>
+
+    <div id="output" style="margin-top:15px;"></div>
+</div>
+
+<!-- VANCI PROFILE DESCRIPTION -->
+<div class="card">
+    <h3>▶ VANCI DARK PROFILE</h3>
+
+    <!-- Your image filename here -->
+    <img src="7af93773-aea9-4c9a-9129-548f602fe75d.png"
+         style="width:120px;border-radius:50%;border:2px solid #00ff55;"><br><br>
+
+    <p>Account Name: <span style="color:#ff0033;">its_pikachoo_0007</span></p>
+
+    <p style="color:#00ff00;">
+        Ranked: <b>Top 10 TOR Browser System</b> (PRANK MODE)
+    </p>
+
+    <p style="font-size:13px;color:#00ff99;">
+        VANCI is a fake dark web-style interface made only for
+        prank and visual simulation purposes.  
+        No real hacking, tracking or data access happens here.
+    </p>
+</div>
+
+<!-- VANCI SYSTEM INFO -->
+<div class="card">
+    <h3>▶ ABOUT VANCI</h3>
+    <p>
+        VANCI (Virtual Anonymous Network Cyber Interface) is a
+        fictional cyber system designed for UI effects, fake
+        scanning and prank hacker-style visuals.
+    </p>
+    <p style="color:#ff0033;font-size:12px;">
+        SYSTEM TYPE: SIMULATION ONLY
+    </p>
+</div>
+
+<!-- NAVIGATION -->
+<a href="red-alert.html">▶ RED ALERT FOR RELOAD TO SAFE FROM CYBER</a>
 <a href="payload-upload.html">▶ PAYLOAD UPLOAD TERMINAL</a>
-<a href="trace-route.html">▶ IP TRACE SCANNER REQUEST </a>
-<a href="market.html">▶  TOR MARKET </a>
-<a href="firewall-breach.html">▶ FIREWALL LACK FOR ENTER TOR </a>
-<a href="system-failure.html">▶ SYSTEM FAILURE FOR SHOW YOUR DATA IS ENTER  </a>
+<a href="trace-route.html">▶ IP TRACE SCANNER REQUEST</a>
+<a href="market.html">▶ TOR MARKET</a>
+<a href="firewall-breach.html">▶ FIREWALL LACK FOR ENTER TOR</a>
+<a href="system-failure.html">▶ SYSTEM FAILURE FOR SHOW YOUR DATA</a>
+
+<script>
+function showFakeData(){
+    let name = document.getElementById("userName").value;
+    let phone = document.getElementById("userPhone").value;
+
+    document.getElementById("output").innerHTML = `
+      <img src="https://via.placeholder.com/90" style="border-radius:50%;border:2px solid #00ff55;"><br><br>
+      <p>Username: ${name || "unknown_user"}</p>
+      <p>Mobile: ${phone || "+91-9XXXXXX000"}</p>
+      <p>Status: <span style="color:#00ff00;">FAKE DATA LOADED ✅</span></p>
+    `;
+}
+</script>
+
 </body>
 </html>
