@@ -1,154 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>ACCESS TERMINAL</title>
 <meta charset="UTF-8">
-<title>VANCI TOR WEB ACCESS</title>
-
 <style>
 body{
-    background:black; 
-    color:#00ff55;
+    margin:0;
+    background:#000;
+    color:#00ff44;
     font-family:monospace;
-    text-align:center;
-    padding-top:60px;
+    overflow:hidden;
 }
 
-/* LINKS */
-a{
-    display:block;
-    font-size:22px;
-    color:#00ff55;
-    margin:18px;
-    text-decoration:none;
-}
-a:hover{
-    text-shadow:0 0 10px #00ff55;
+#terminal{
+    padding:20px;
+    white-space:pre-wrap;
+    font-size:15px;
+    text-shadow:0 0 5px #00ff44;
 }
 
-/* GLITCH TITLE */
 .glitch{
-    font-size:38px;
-    font-weight:bold;
-    animation:gl 0.2s infinite;
+    color:#ff0033;
+    animation:glitch 0.2s infinite;
 }
-@keyframes gl{
+
+@keyframes glitch{
     0%{text-shadow:2px 0 red;}
-    50%{text-shadow:-2px 0 blue;}
-    100%{text-shadow:0 0 10px #00ff55;}
+    50%{text-shadow:-2px 0 red;}
+    100%{text-shadow:2px 0 red;}
 }
 
-/* MAIN IMAGE */
-#idImage{
-    width:300px;
-    border:2px solid #00ff55;
-    margin-top:25px;
-    border-radius:6px;
-    box-shadow:0 0 15px #00ff55;
+.line{
+    opacity:0;
+    animation:show 0.3s forwards;
 }
 
-/* CARDS */
-.card{
-    border:2px solid #00ff55;
-    width:330px;
-    margin:30px auto;
-    padding:15px;
-    box-shadow:0 0 15px #00ff55;
+@keyframes show{
+    to{ opacity:1; }
 }
 
-/* INPUTS */
-input{
-    background:black;
-    border:1px solid #00ff55;
-    color:#00ff55;
-    padding:6px;
-    margin:5px;
-    font-family:monospace;
-    width:85%;
+#bigWarn{
+    position:fixed;
+    top:40%;
+    width:100%;
+    text-align:center;
+    font-size:40px;
+    color:#ff0033;
+    text-shadow:0 0 15px #ff0033;
+    display:none;
+    animation:warn 0.8s infinite;
 }
-button{
-    background:black;
-    color:#00ff55;
-    border:1px solid #00ff55;
-    padding:6px 20px;
-    cursor:pointer;
-    margin-top:10px;
-}
-button:hover{
-    box-shadow:0 0 10px #00ff55;
+
+@keyframes warn{
+    0%{opacity:0.3;}
+    100%{opacity:1;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="glitch">VANCI DARK SYSTEM</div>
+<div id="bigWarn">⚠ SYSTEM VIOLATION ⚠</div>
 
-<!-- MAIN IMAGE -->
-<img id="idImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvsm5CPv0EBCN1br7X8dyNx8Cczs12wCfmmw&s">
-
-<!-- FAKE TARGET SCANNER -->
-<div class="card">
-    <h3>▶ TARGET ACCOUNT SCANNER (SIMULATION)</h3>
-
-    <input id="userName" placeholder="Enter Username"><br>
-    <input id="userPhone" placeholder="Enter Mobile Number"><br>
-
-    <button onclick="showFakeData()">SCAN PROFILE</button>
-
-    <div id="output" style="margin-top:15px;"></div>
-</div>
-
-<!-- VANCI PROFILE DESCRIPTION -->
-<div class="card">
-    <h3>▶ VANCI DARK PROFILE</h3>
-
-    <!-- Your image filename here -->
-    <img src="7af93773-aea9-4c9a-9129-548f602fe75d.png"
-         style="width:120px;border-radius:50%;border:2px solid #00ff55;"><br><br>
-
-    <p>Account Name: <span style="color:#ff0033;">its_pikachoo_0007</span></p>
-
-    <p style="color:#00ff00;">
-        Ranked: <b>Top 10 TOR Browser System</b> (PRANK MODE)
-    </p>
-
-    <p style="font-size:13px;color:#00ff99;">
-        VANCI   dark system is a  dark web- interface .  
-         hacking, tracking or data access happens here.
-    </p>
-</div>
-
-<!-- VANCI SYSTEM INFO -->
-<div class="card">
-    <h3>▶ ABOUT VANCI</h3>
-    <p>
-        VANCI (Various artificial computer  intelligence  ) 
-    </p>
-    <p style="color:#ff0033;font-size:12px;">
-        SYSTEM TYPE: connect a member of BLACKHAT
-    </p>
-</div>
-
-<!-- NAVIGATION -->
-<a href="red-alert.html">▶ RED ALERT FOR RELOAD TO SAFE FROM CYBER</a>
-<a href="payload-upload.html">▶ PAYLOAD UPLOAD TERMINAL</a>
-<a href="trace-route.html">▶ IP TRACE SCANNER REQUEST</a>
-<a href="market.html">▶ TOR MARKET</a>
-<a href="firewall-breach.html">▶ FIREWALL LACK FOR ENTER TOR</a>
-<a href="system-failure.html">▶ SYSTEM FAILURE FOR SHOW YOUR DATA</a>
+<div id="terminal"></div>
 
 <script>
-function showFakeData(){
-    let name = document.getElementById("userName").value;
-    let phone = document.getElementById("userPhone").value;
+let t = document.getElementById("terminal");
+let warn = document.getElementById("bigWarn");
 
-    document.getElementById("output").innerHTML = `
-      <img src="https://via.placeholder.com/90" style="border-radius:50%;border:2px solid #00ff55;"><br><br>
-      <p>Username: ${name || "unknown_user"}</p>
-      <p>Mobile: ${phone || "+91-9XXXXXX000"}</p>
-      <p>Status: <span style="color:#00ff00;">FAKE DATA LOADED ✅</span></p>
-    `;
+let lines = [
+    "[BOOT] Initializing dark-core kernel...",
+    "[OK] Secure layer mounted.",
+    "[SCAN] Target username detected → its_pikachoo_0007",
+    "[TRACE] Syncing fake IP route...",
+    " → LINKING IP: 192.168.XX.FAKE",
+    "[ACCESS] Connecting to remote shell...",
+    "[GRANTED] Fake-session established.",
+    "",
+    "--- BEGIN DATA DELETE SIMULATION ---",
+    "Deleting: /messages/history.log ..... 14%",
+    "Deleting: /private/cache.bin ...... 39%",
+    "Deleting: /system/keychain.fake ... 62%",
+    "Deleting: /social/data.fake ....... 89%",
+    "",
+    "*** DATA ERASE SIMULATION COMPLETE ***",
+    "",
+    "[ALERT] Unauthorized activity detected.",
+    "[LOCKDOWN] Triggering visual warning..."
+];
+
+let i = 0;
+
+function printLine(){
+    if(i < lines.length){
+        let p = document.createElement("div");
+        p.className = "line";
+        p.textContent = lines[i];
+        t.appendChild(p);
+        i++;
+        setTimeout(printLine, 180);
+    } else {
+        warn.style.display = "block";
+    }
 }
+
+printLine();
 </script>
 
 </body>
